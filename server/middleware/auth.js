@@ -9,7 +9,7 @@ let auth = (req, res, next)=>{
     //토큰을 복호화한 후 유저를 찾는다
     User.findByToken(token, (err, user)=>{
         if(err) throw err;
-        if(!user) return res.json({isAuth:false, error:true});
+        if(!user) return res.json({isAuth:false, error:true})
 
         //req에 토큰과 유저를 넣어줘서 (index.js)에서 유저정보를 가져올 수 있도록 함
         req.token = token;
